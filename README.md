@@ -1,4 +1,4 @@
 yLibrary
 ========
 
-yLibrary - simple library manager
+yLibrary - simple library manager based on MongoDB, node and Angular
