@@ -1,0 +1,36 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,latin-ext);
+html {
+  height: 100%;
+  overflow: auto;
+}
+body {
+  background: #7f4444 url('../img/blurred_background.jpg') repeat-y center 0px fixed;
+  background-size: cover;
+  font-family: 'Open Sans', Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  color: #555555;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Open Sans', Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.realy-wide {
+  width: 100%;
+  height: 100%;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  float: none;
+  clear: both;
+}
+#top {
+  padding: 100px 0px 100px 0px;
+  text-shadow: 1px 1px 1px #000;
+  text-align: center;
+  color: #ffffff;
+}
