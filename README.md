@@ -4,7 +4,7 @@ yLibrary
 yLibrary - simple library manager based on MongoDB, node and Angular
 
 Running the example
-===================
+-------------------
 
 Assuming you have node.js already installed, run:
 
