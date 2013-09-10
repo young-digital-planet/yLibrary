@@ -1,4 +1,5 @@
 import urllib
+import json
 from xml.dom import minidom
 
 key = 'AcLnzPwwk3NuHwplfdTmnw'
@@ -11,7 +12,22 @@ def run():
 	xmldoc = minidom.parse(xml)		
 
 	for review in xmldoc.getElementsByTagName('review'):
-		print get_book_details(review)
+		print json.dumps(create_book_queue(review))
+#		print json.dumps(get_book_details(review))
+
+
+def create_book_queue(xmldoc):
+	return {
+                "book": {
+                        "isbn": getText(xmldoc.getElementsByTagName('isbn13')[0].childNodes),
+                        "title": getText(xmldoc.getElementsByTagName('title')[0].childNodes),
+                        "authors": get_authors(xmldoc.getElementsByTagName('authors')),
+                        "image_url": getText(xmldoc.getElementsByTagName('image_url')[0].childNodes),
+                        },
+		"borrowed": False,
+		"borrower": {},
+		"queue": []
+		}
 
 def get_book_details(xmldoc):
 	return {
