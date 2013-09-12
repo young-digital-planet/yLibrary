@@ -34,3 +34,8 @@ h6 {
   text-align: center;
   color: #ffffff;
 }
+#search {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #ffffff;
+}
