@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 node_modules/
 nbproject
-=======
-node_modules/
 nbproject
 .idea
 yLibrary.iml
->>>>>>> origin/develop
