@@ -22,3 +22,17 @@ mongo import.js
 ```
 
 The first command loads sample books data into the db.books collection, while the latter agregates basic book information, add borrowed information and populated db.queue collection
+
+
+Running the example
+-------------------
+
+Assuming you have node.js and already installed, run:
+
+```
+cd yLibrary
+npm install
+node server.js
+```
+
+The server is operating under http://localhost:3000
