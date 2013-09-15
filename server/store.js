@@ -15,7 +15,7 @@ module.exports.store = (function(){
 
         getBookByIsbn: function(isbn, callback) {
             var books = db.collection('books');
-            books.find({"book.isbn": isbn}, function(err, book) {
+            books.findOne({"book.isbn": isbn}, function(err, book) {
                 if (err) throw err;
                 else callback(null, book);
             });
