@@ -1,8 +1,6 @@
-var mongojs = require('mongojs');
+var db = require('mongojs').connect('test');
 
 module.exports.store = (function(){
-
-    var db = mongojs('test');
 
     return {
         getQueue: function(callback){

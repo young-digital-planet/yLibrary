@@ -36,3 +36,16 @@ node server.js
 ```
 
 The server is operating under http://localhost:3000
+
+
+Running tests
+-------------
+
+Test suit is using mocha. To run tests install mocha globally as follows
+
+```
+npm install -g mocha
+mocha
+```
+
+So far, test assume mongodb is running in the background with default data
