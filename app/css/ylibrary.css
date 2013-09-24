@@ -35,7 +35,16 @@ h6 {
   color: #ffffff;
 }
 #search {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 25px;
   background-color: #ffffff;
+}
+#browse {
+  padding-top: 25px;
+  padding-bottom: 30px;
+  background-color: #ffffff;
+}
+.thumbnail {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
