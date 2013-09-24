@@ -6,6 +6,12 @@ module.exports = function(app, store) {
         });
     });
 
+    app.get('/rest/books', function(req, res){
+        store.getBooks(function(error, docs) {
+            res.json(docs);
+        });
+    });
+
     //curl -XPOST -H "Content-Type: application/json" -d '{"username": "jmarchwicki"}' http://localhost:3000/rest/queue/9780470084113
     app.post('/rest/queue/:isbn', function(req, res) {
         var isbn = req.params.isbn;
