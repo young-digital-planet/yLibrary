@@ -20,6 +20,9 @@ h5,
 h6 {
   font-family: 'Open Sans', Verdana, Geneva, Arial, Helvetica, sans-serif;
 }
+a {
+  cursor: pointer;
+}
 .realy-wide {
   width: 100%;
   height: 100%;
