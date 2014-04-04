@@ -11,6 +11,14 @@ module.exports.store = (function(){
             });
         },
 
+        getBooks: function(callback){
+            var queue = db.collection('books');
+            queue.find(function(err, docs) {
+                if (err) throw err;
+                else callback(null, docs);
+            });
+        },
+
         getBookByIsbn: function(isbn, callback) {
             var books = db.collection('books');
             books.findOne({"book.isbn": isbn}, function(err, book) {
