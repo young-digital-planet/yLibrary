@@ -6,8 +6,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
 		<link href="css/ylibrary.css" rel="stylesheet" media="screen" />
+		<link href="css/animations.css" rel="stylesheet" media="screen" />
 		<link href="css/print.css" rel="stylesheet" media="print" />
-		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
 		<script type="text/javascript" src="js/yLibrary.js"></script>
 	</head>
 	<body>
@@ -29,7 +31,7 @@
 		<section id="browse" ng-controller="books">
 			<div class="container">
 				<div class="row">
-					<div ng-repeat="bq in booksQueue | filter:searchQuery" class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+					<div ng-repeat="bq in booksQueue | filter:searchQuery" class="repeated-item col-xs-12 col-sm-4 col-md-3 col-lg-3">
 						<div class="thumbnail">
 							<img src="{{bq.book.image_url}}" alt="Book thumbnail" class="img-responsive">
 							<div class="caption">

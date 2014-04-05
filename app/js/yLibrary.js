@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ng']);
+var app = angular.module('app', ['ngAnimate']);
 
 app.controller('books', function($scope,$http) {
 	$scope.message = 'World';
