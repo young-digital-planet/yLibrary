@@ -42,6 +42,10 @@ a {
   padding-bottom: 25px;
   background-color: #ffffff;
 }
+#no-search-results {
+  font-size: 100px;
+  text-align: center;
+}
 #browse {
   padding-top: 25px;
   padding-bottom: 30px;
