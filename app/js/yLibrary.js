@@ -17,4 +17,6 @@ app.controller('books', function($scope,$http) {
 
 
 	};
+
+  $scope.queue();
 });
