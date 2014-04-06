@@ -1,6 +1,22 @@
-var app = angular.module('app', ['ngAnimate']);
+var app = angular.module('app', ['ngRoute', 'ngAnimate']);
 
-app.controller('books', function($scope,$http) {
+app.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+        when('/books', {
+          templateUrl: 'partials/books-list.html',
+          controller: 'BooksController'
+        }).
+        when('/book/:isbn', {
+          templateUrl: 'partials/book-details.html',
+          controller: 'BooksController'
+        }).
+        otherwise({
+          redirectTo: '/books'
+        });
+  }]);
+
+app.controller('BooksController', function($scope,$http) {
 	$scope.message = 'World';
 	$scope.booksQueue = null;
 
