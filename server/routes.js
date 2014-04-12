@@ -6,6 +6,14 @@ module.exports = function(app, store) {
         });
     });
 
+    app.get('/rest/queue/:isbn', function(req, res) {
+      var isbn = req.params.isbn;
+
+      store.getQueueByIsbn(isbn, function(error, bookQueue) {
+        res.json(bookQueue);
+      });
+    });
+
     app.get('/rest/books', function(req, res){
         store.getBooks(function(error, docs) {
             res.json(docs);

@@ -1,1 +1,15 @@
-book details
+<section id="book-details">
+  <div class="container">
+    <h2>{{bookQueue.book.title}}</h2>
+
+    <h3><comma-separated-list list="bookQueue.book.authors"></comma-separated-list></h3>
+
+    <div ng-show="bookQueue.borrowed">
+      <h4>Książka jest wypożyczona. Osoby w kolejce:</h4>
+
+      <queue queue-list="bookQueue.queue"></queue>
+      <a href="#/queue/{{bookQueue.book.isbn}}" class="btn btn-success"><i class="glyphicon glyphicon-shopping-cart"></i>Dołącz do kolejki!</a>
+    </div>
+
+  </div>
+</section>

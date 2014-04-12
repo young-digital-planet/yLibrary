@@ -1,4 +1,4 @@
-<section id="browse" ng-controller="BooksController">
+<section id="browse">
   <div class="container">
     <div class="row">
       <div ng-repeat="bq in filteredBooksQueue = (booksQueue | filter:searchQuery)" class="repeated-item col-xs-12 col-sm-4 col-md-3 col-lg-3">
@@ -7,8 +7,8 @@
           <div class="caption">
             <h4>{{bq.book.title}}</h4>
             <p class="text-center">
-              <a href="#" class="btn btn-success"><i class="glyphicon glyphicon-shopping-cart"></i> Zamów</a>
-              <a href="#" class="btn btn-info">Czytaj więcej <i class="glyphicon glyphicon-arrow-right"></i></a>
+              <a href="#/queue/{{bq.book.isbn}}" class="btn btn-success"><i class="glyphicon glyphicon-shopping-cart"></i> Zamów</a>
+              <a href="#/book/{{bq.book.isbn}}" class="btn btn-info">Czytaj więcej <i class="glyphicon glyphicon-arrow-right"></i></a>
             </p>
           </div>
         </div>

@@ -1,0 +1,11 @@
+<section id="book-details">
+  <div class="container">
+    <h2>Wypożyczyłeś "{{bookQueue.book.title}}"</h2>
+
+    <div ng-hide="bookQueue.userIsTheOnlyOneInQueue">
+      <h3>Osoby w kolejce przed Tobą:</h3>
+
+      <queue queue-list="bookQueue.queue"></queue>
+    </div>
+  </div>
+</section>
