@@ -7,7 +7,7 @@
           <div class="caption">
             <h4>{{bq.book.title}}</h4>
             <p class="text-center">
-              <a href="#/queue/{{bq.book.isbn}}" class="btn btn-success"><i class="glyphicon glyphicon-shopping-cart"></i> Zamów</a>
+              <show-add-to-queue-dialog-button ng-click="$root.isbnToQueue = bq.book.isbn">Wypożycz!</show-add-to-queue-dialog-button>
               <a href="#/book/{{bq.book.isbn}}" class="btn btn-info">Czytaj więcej <i class="glyphicon glyphicon-arrow-right"></i></a>
             </p>
           </div>

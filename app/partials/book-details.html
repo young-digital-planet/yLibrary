@@ -8,8 +8,11 @@
       <h4>Książka jest wypożyczona. Osoby w kolejce:</h4>
 
       <queue queue-list="bookQueue.queue"></queue>
-      <a href="#/queue/{{bookQueue.book.isbn}}" class="btn btn-success"><i class="glyphicon glyphicon-shopping-cart"></i>Dołącz do kolejki!</a>
+      <show-add-to-queue-dialog-button ng-click="$root.isbnToQueue = bookQueue.book.isbn">Dołącz do kolejki!</show-add-to-queue-dialog-button>
     </div>
 
+    <div ng-hide="bookQueue.borrowed">
+      <show-add-to-queue-dialog-button ng-click="$root.isbnToQueue = bookQueue.book.isbn">Wypożycz!</show-add-to-queue-dialog-button>
+    </div>
   </div>
 </section>

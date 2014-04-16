@@ -28,18 +28,24 @@ yLibraryControllers.controller('BookDetailsController', function($scope,$routePa
       });
 });
 
-yLibraryControllers.controller('BookQueuedController', function($scope,$routeParams,$http) {
+yLibraryControllers.controller('BookQueuedController', function($scope,$routeParams,$http,$location) {
 
   $scope.booksQueue = null;
 
-  $http({method: 'POST', url: '/rest/queue/' + $routeParams.isbn, data: {username: "PlaceholderName"}}).
-      success(function(data, status, headers, config) {
-        data.queue.splice(data.queue.length - 1, 1);
-        $scope.bookQueue = data;
-        $scope.bookQueue.userIsTheOnlyOneInQueue = data.queue.length == 0;
-        console.log($scope.bookQueue.userIsTheOnlyOneInQueue);
-      }).
-      error(function(data, status, headers, config) {
-        console.log('Error: ' + status)
-      });
+  if ($scope.username && $scope.username.length > 0) {
+    $http({method: 'POST', url: '/rest/queue/' + $routeParams.isbn, data: {username: $scope.username}}).
+        success(function (data, status, headers, config) {
+          data.queue.splice(data.queue.length - 1, 1);
+          $scope.bookQueue = data;
+          $scope.bookQueue.userIsTheOnlyOneInQueue = data.queue.length == 0;
+          console.log($scope.bookQueue.userIsTheOnlyOneInQueue);
+        }).
+        error(function (data, status, headers, config) {
+          console.log('Error: ' + status)
+        });
+  }
+  else
+  {
+    $location.path("/book/" + $routeParams.isbn);
+  }
 });

@@ -1,0 +1,5 @@
+<modal-dialog show='addToQueueDialogShown' width="350px">
+  <span>Podaj imię</span>
+  <input ng-model="$root.username">
+  <a href="#/queue/{{isbnToQueue}}" ng-click="$root.addToQueueDialogShown = false;">GO!</a>
+</modal-dialog>
