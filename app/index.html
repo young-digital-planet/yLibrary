@@ -10,11 +10,14 @@
 		<link href="css/print.css" rel="stylesheet" media="print" />
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
 		<script type="text/javascript" src="js/yLibrary.js"></script>
+		<script type="text/javascript" src="js/directives.js"></script>
+    <script type="text/javascript" src="js/controllers.js"></script>
 	</head>
 	<body>
 		<header class="realy-wide" id="top">
-			<h1>yLibrary</h1>
+			<h1><a href="/">yLibrary</a></h1>
 		</header>
 		<section id="search" class="realy-wide">
 			<div class="container">
@@ -27,24 +30,9 @@
 				</div>
 			</div>
 		</section>
-		<section id="browse" ng-controller="books">
-			<div class="container">
-				<div class="row">
-					<div ng-repeat="bq in filteredBooksQueue = (booksQueue | filter:searchQuery)" class="repeated-item col-xs-12 col-sm-4 col-md-3 col-lg-3">
-						<div class="thumbnail">
-							<img src="{{bq.book.image_url}}" alt="Book thumbnail" class="img-responsive">
-							<div class="caption">
-								<h4>{{bq.book.title}}</h4>
-								<p class="text-center">
-									<a href="#" class="btn btn-success"><i class="glyphicon glyphicon-shopping-cart"></i> Zamów</a>
-									<a href="#" class="btn btn-info">Czytaj więcej <i class="glyphicon glyphicon-arrow-right"></i></a>
-								</p>
-							</div>
-						</div>
-					</div>
-          <p ng-hide="filteredBooksQueue.length" id="no-search-results">Brak wyników :(</p>
-				</div>
-			</div>
-		</section>
+    <section class="view-container">
+      <section ng-view class="view-frame"></section>
+    </section>
+    <add-to-queue-dialog></add-to-queue-dialog>
 	</body>
 </html>

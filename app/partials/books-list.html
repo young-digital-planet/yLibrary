@@ -1,0 +1,19 @@
+<section id="browse">
+  <div class="container">
+    <div class="row">
+      <div ng-repeat="bq in filteredBooksQueue = (booksQueue | filter:searchQuery)" class="repeated-item col-xs-12 col-sm-4 col-md-3 col-lg-3">
+        <div class="thumbnail">
+          <img src="{{bq.book.image_url}}" alt="Book thumbnail" class="img-responsive">
+          <div class="caption">
+            <h4>{{bq.book.title}}</h4>
+            <p class="text-center">
+              <show-add-to-queue-dialog-button ng-click="$root.isbnToQueue = bq.book.isbn">Wypożycz!</show-add-to-queue-dialog-button>
+              <a href="#/book/{{bq.book.isbn}}" class="btn btn-info">Czytaj więcej <i class="glyphicon glyphicon-arrow-right"></i></a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <p ng-hide="filteredBooksQueue.length" id="no-search-results">Brak wyników :(</p>
+    </div>
+  </div>
+</section>

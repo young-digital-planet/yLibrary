@@ -1,0 +1,18 @@
+<section id="book-details">
+  <div class="container">
+    <h2>{{bookQueue.book.title}}</h2>
+
+    <h3><comma-separated-list list="bookQueue.book.authors"></comma-separated-list></h3>
+
+    <div ng-show="bookQueue.borrowed">
+      <h4>Książka jest wypożyczona. Osoby w kolejce:</h4>
+
+      <queue queue-list="bookQueue.queue"></queue>
+      <show-add-to-queue-dialog-button ng-click="$root.isbnToQueue = bookQueue.book.isbn">Dołącz do kolejki!</show-add-to-queue-dialog-button>
+    </div>
+
+    <div ng-hide="bookQueue.borrowed">
+      <show-add-to-queue-dialog-button ng-click="$root.isbnToQueue = bookQueue.book.isbn">Wypożycz!</show-add-to-queue-dialog-button>
+    </div>
+  </div>
+</section>

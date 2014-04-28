@@ -11,6 +11,14 @@ module.exports.store = (function(){
             });
         },
 
+        getQueueByIsbn: function(isbn, callback){
+          var queue = db.collection('queue');
+          queue.findOne({"book.isbn": isbn}, function(err, docs) {
+            if (err) throw err;
+            else callback(null, docs);
+          });
+        },
+
         getBooks: function(callback){
             var queue = db.collection('books');
             queue.find(function(err, docs) {
@@ -31,7 +39,10 @@ module.exports.store = (function(){
             var queue = db.collection('queue')
             queue.findAndModify({
                 query: {"book.isbn": isbn},
-                update: {$addToSet: {queue: {username: username, date: new Date()}}},
+                update: {
+                          $addToSet: {queue: {username: username, date: new Date()}},
+                          $set: {borrowed: true}
+                },
                 new: true
             }, function(err, book) {
                 console.log(book)
